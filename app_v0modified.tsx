@@ -677,7 +677,6 @@ function AbstractAnimation() {
   return <canvas ref={canvasRef} className="w-full h-full rounded-lg" />
 }
 
-// Optimized Typewriter Component
 function SequentialTypewriter() {
   const [displayText, setDisplayText] = useState("")
   const [showCursor, setShowCursor] = useState(true)
@@ -692,6 +691,7 @@ function SequentialTypewriter() {
       if (currentIndex < fullText.length) {
         setDisplayText(fullText.substring(0, currentIndex + 1))
         currentIndex++
+        // Adjust the delay as needed for specific characters
         timer = setTimeout(typeNextChar, currentIndex === 4 ? 150 : 80)
       } else {
         setIsComplete(true)
@@ -721,13 +721,17 @@ function SequentialTypewriter() {
   return (
     <span className="relative inline-block">
       <span dangerouslySetInnerHTML={{ __html: coloredText }} />
-      <span
-        className={`absolute -right-[20px] ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity duration-100`}
-      >
-        |
-      </span>
+      {/* Only render the cursor if displayText is not empty */}
+      {displayText && (
+        <span
+          className={`absolute -right-[20px] ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity duration-100`}
+        >
+          |
+        </span>
+      )}
     </span>
   )
 }
+
 
 export default App
