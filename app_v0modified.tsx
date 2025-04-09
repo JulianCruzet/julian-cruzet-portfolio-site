@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback, memo } from "react"
 import { Github, Linkedin, Mail, Pen, ExternalLink, ChevronLeft, ChevronRight, Folder } from "lucide-react"
 
 // Memoize components that don't need frequent re-renders
-const MemoizedFractalAnimation = memo(FractalAnimation)
+const MemoizedAbstractAnimation = memo(AbstractAnimation)
 const MemoizedTypewriter = memo(SequentialTypewriter)
 
 function App() {
@@ -22,40 +22,60 @@ function App() {
       description:
         "A scikit-learn model and dashboard using Streamlit to evaluate and research any NBA player's impact on game outcomes, with an 85% success accuracy.",
       image:
-        "https://images.unsplash.com/photo-1518407613690-d9fc990e795f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        "images/scottiestreamlit.png",
       tech: ["PYTHON", "SCIKIT-LEARN", "STREAMLIT"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/JulianCruzet/NBA-Player-Contribution-Model",
+      demo: "https://scottiebarnes.streamlit.app",
     },
     {
       title: "Ontario Tech Spots",
       description:
         "A full-stack web application using Next.js, React, and Node.js to visualize real-time room availability across the Ontario Tech campus, featuring an interactive 3D map.",
       image:
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        "images/otuspots.png",
       tech: ["NEXT.JS", "REACT", "NODE.JS", "PUPPETEER"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/JMcKesey/ontariotech-spots",
+      demo: "https://github.com/JMcKesey/ontariotech-spots",
     },
     {
       title: "JAM Photo Editor",
       description:
         "An interactive photo editing app using Next.js and React, featuring real-time image processing effects, such as layering, greyscale and nearest-neighbor interpolation.",
       image:
-        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        "images/jamphoto.png",
       tech: ["NEXT.JS", "REACT", "IMAGE PROCESSING"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/JulianCruzet/CompPhotoAssignment1",
+      demo: "https://github.com/JulianCruzet/CompPhotoAssignment1",
     },
     {
       title: "Academic Oasis Platform",
       description:
         "A responsive React-based campus engagement platform, featuring dynamic club and job listings, with intuitive filtering and interactive user interest tracking.",
       image:
-        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+        "images/academicoasistemplate.png",
       tech: ["REACT", "NODE.JS", "AGILE"],
       github: "#",
       demo: "#",
+    },
+    {
+      title: "SpeedTyper",
+      description:
+      "A multiplayer typing speed test game that allows users to test out their typing speed and improve their typing skills.",
+      image:
+        "images/monkeytype.png",
+      tech: ["WEBSOCKETS", "JAVASCRIPT", "HTML/CSS"],
+      github: "https://github.com/JulianCruzet/MonkeyType-Clone",
+      demo: "https://github.com/JulianCruzet/MonkeyType-Clone",
+    },
+    {
+      title: "Spooterfy",
+      description:
+      "Led Flask-based music recommendation web application, integrating user interaction features and sophisticated recommendation algorithms.",
+      image:
+        "images/spooterfy1.png",
+      tech: ["Python", "React", "Next.js"],
+      github: "https://github.com/JulianCruzet/Spotify-Song-Recommender",
+      demo: "https://github.com/JulianCruzet/Spotify-Song-Recommender",
     },
   ]
 
@@ -65,24 +85,24 @@ function App() {
       description:
         "A scikit-learn model and dashboard to evaluate NBA player's impact on game outcomes, with 85% success accuracy using feature importance analysis.",
       tech: ["Python", "scikit-learn", "Streamlit", "Data Analysis"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/JulianCruzet/NBA-Player-Contribution-Model",
+      demo: "https://scottiebarnes.streamlit.app",
     },
     {
       title: "Ontario Tech Spots",
       description:
         "A full-stack application visualizing real-time room availability across campus with an interactive 3D map and automated web scraping system.",
       tech: ["Next.js", "React", "Node.js", "Puppeteer"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/JMcKesey/ontariotech-spots",
+      demo: "https://github.com/JMcKesey/ontariotech-spots",
     },
     {
       title: "JAM Photo Editor",
       description:
         "An interactive photo editing app featuring real-time image processing effects, layering, greyscale and nearest-neighbor interpolation.",
       tech: ["Next.js", "React", "Image Processing"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/JulianCruzet/CompPhotoAssignment1",
+      demo: "https://github.com/JulianCruzet/CompPhotoAssignment1",
     },
     {
       title: "Academic Oasis Platform",
@@ -92,19 +112,19 @@ function App() {
       github: "#",
     },
     {
-      title: "Portfolio Website",
+      title: "Spooterfy",
       description:
-        "A responsive personal portfolio website showcasing projects, skills, and experience with a modern, interactive design.",
-      tech: ["React", "Tailwind CSS", "Next.js"],
-      github: "#",
-      demo: "#",
+        "Led Flask-based music recommendation web application, integrating user interaction features and sophisticated recommendation algorithms.",
+      tech: ["Python", "React", "Next.js"],
+      github: "https://github.com/JulianCruzet/Spotify-Song-Recommender",
+      demo: "https://github.com/JulianCruzet/Spotify-Song-Recommender",
     },
     {
-      title: "GDG Campus Content",
+      title: "SpeedTyper",
       description:
-        "Social media content creation for Google Developer Groups, increasing campus presence and event turnout.",
-      tech: ["Video Editing", "Social Media", "Marketing"],
-      github: "#",
+        "A multiplayer typing speed test game that allows users to test out their typing speed and improve their typing skills. User friendly and easy to use.",
+      tech: ["Websockets", "Javascript", "HTML/CSS"],
+      github: "https://github.com/JulianCruzet/MonkeyType-Clone",
     },
   ]
 
@@ -137,6 +157,15 @@ function App() {
         "Increased campus presence, general member count, and event turnout through strategic marketing initiatives.",
       ],
     },
+    {
+      company: "VALUE VILLAGE",
+      title: "Community Donation Center Ambassador",
+      period: "JULY 2021 - CURRENT",
+      achievements: [
+        "Received, sorted, and processed over 7,000lbs of donations daily, including clothing, accessories, household goods, furniture, books, and more.",
+        "Provided exceptional customer service by assisting donors with unloading and handling donations, answering inquiries, and expressing gratitude for their contributions, which raised sales by over 14% since my start date.",
+      ],
+    }
   ]
 
   // Use useCallback to memoize functions
@@ -230,9 +259,9 @@ function App() {
       {/* Intro Section */}
       <section id="intro" className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
         <div className="max-w-3xl mx-auto">
-          {/* Animated Fractal Tree - Memoized */}
+          {/* Abstract Animation - Memoized */}
           <div className="mb-8 w-40 h-40 mx-auto">
-            <MemoizedFractalAnimation />
+            <MemoizedAbstractAnimation />
           </div>
 
           <h1 className="text-6xl font-bold mb-2">
@@ -297,14 +326,15 @@ function App() {
 
               <p>
                 Outside of work and studies, I'm involved with Google Developer Groups on campus as a Marketing Lead,
-                where I create engaging content to increase campus presence and event turnout.
+                where I create engaging content to increase campus presence and event turnout. I also enjoy playing
+                basketball, fashion, and working out in my free time.
               </p>
             </div>
 
             <div className="relative group max-w-[350px] self-start mx-auto md:mx-0">
               <div className="relative z-10 rounded-lg overflow-hidden aspect-square">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                  src="images/tester1.jpg"
                   alt="Julian Cruzet"
                   className="rounded-lg grayscale hover:grayscale-0 transition-all duration-300 w-full h-full object-cover"
                   loading="lazy"
@@ -355,16 +385,18 @@ function App() {
                 </h3>
                 <p className="text-gray-400 mb-4">{experiences[activeExperience].period}</p>
 
-                {/* Use CSS transition for smoother animation */}
-                <div key={`exp-content-${experienceKey}`} className="animate-slide-in">
-                  <ul className="space-y-4">
-                    {experiences[activeExperience].achievements.map((achievement, i) => (
-                      <li key={i} className="flex">
-                        <span className="text-[#64ffda] mr-2 mt-1">▹</span>
-                        <span className="text-gray-400">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Fixed height container for experience content */}
+                <div className="min-h-[250px]">
+                  <div key={`exp-content-${experienceKey}`} className="animate-slide-in">
+                    <ul className="space-y-4">
+                      {experiences[activeExperience].achievements.map((achievement, i) => (
+                        <li key={i} className="flex">
+                          <span className="text-[#64ffda] mr-2 mt-1">▹</span>
+                          <span className="text-gray-400">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -499,8 +531,8 @@ function App() {
   )
 }
 
-// Simplified Fractal Animation with better performance
-function FractalAnimation() {
+// Fun abstract animation with just the greenish color and white
+function AbstractAnimation() {
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -513,41 +545,123 @@ function FractalAnimation() {
     canvas.width = 200
     canvas.height = 200
 
-    // Simplified fractal drawing with fewer calculations
-    const drawFractal = (x, y, length, angle, depth) => {
-      if (depth === 0) return
+    // Particle system
+    const particles = []
+    const particleCount = 50
 
-      const x2 = x + length * Math.cos(angle)
-      const y2 = y + length * Math.sin(angle)
-
-      ctx.beginPath()
-      ctx.moveTo(x, y)
-      ctx.lineTo(x2, y2)
-      ctx.strokeStyle = depth === 6 ? "#64ffda" : `hsl(160, 80%, ${60 + Math.sin(time) * 10}%)`
-      ctx.lineWidth = depth * 0.5
-      ctx.stroke()
-
-      // Simplified branch angle calculations
-      const branchAngle = 0.4 + 0.1 * Math.sin(time * 0.5)
-
-      // Draw branches with less variation for better performance
-      drawFractal(x2, y2, length * 0.7, angle - branchAngle, depth - 1)
-      drawFractal(x2, y2, length * 0.7, angle + branchAngle, depth - 1)
+    // Create particles
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 4 + 1,
+        speedX: (Math.random() - 0.5) * 1,
+        speedY: (Math.random() - 0.5) * 1,
+        opacity: Math.random() * 0.5 + 0.3,
+      })
     }
 
+    // Animation loop
     const render = () => {
-      // Reduce animation speed for better performance
-      time += 0.015
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      time += 0.01
+      ctx.fillStyle = "#0a192f"
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      // Start the fractal from the bottom center
-      drawFractal(
-        canvas.width / 2,
-        canvas.height * 0.8,
-        canvas.height * 0.2,
-        -Math.PI / 2 + Math.sin(time * 0.2) * 0.05,
-        5, // Reduced depth for better performance
-      )
+      // Draw a cool pattern with the greenish color
+      const centerX = canvas.width / 2
+      const centerY = canvas.height / 2
+
+      // Draw flowing waves
+      for (let i = 0; i < 5; i++) {
+        ctx.beginPath()
+
+        const radius = 30 + i * 10
+        const waveAmplitude = 15 * Math.sin(time * 0.5)
+
+        for (let angle = 0; angle < Math.PI * 2; angle += 0.1) {
+          const xOffset = Math.cos(angle * 3 + time) * waveAmplitude
+          const yOffset = Math.sin(angle * 2 + time * 1.3) * waveAmplitude
+
+          const x = centerX + Math.cos(angle) * (radius + xOffset)
+          const y = centerY + Math.sin(angle) * (radius + yOffset)
+
+          if (angle === 0) {
+            ctx.moveTo(x, y)
+          } else {
+            ctx.lineTo(x, y)
+          }
+        }
+
+        ctx.closePath()
+        ctx.strokeStyle = `rgba(100, 255, 218, ${0.2 - i * 0.03})`
+        ctx.lineWidth = 2
+        ctx.stroke()
+      }
+
+      // Draw connecting lines
+      ctx.globalAlpha = 0.2
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x
+          const dy = particles[i].y - particles[j].y
+          const distance = Math.sqrt(dx * dx + dy * dy)
+
+          if (distance < 50) {
+            ctx.beginPath()
+            ctx.moveTo(particles[i].x, particles[i].y)
+            ctx.lineTo(particles[j].x, particles[j].y)
+            ctx.strokeStyle = `rgba(100, 255, 218, ${0.1 * (1 - distance / 50)})`
+            ctx.lineWidth = 0.5
+            ctx.stroke()
+          }
+        }
+      }
+      ctx.globalAlpha = 1
+
+      // Update and draw particles
+      particles.forEach((particle, index) => {
+        // Update position
+        particle.x += particle.speedX
+        particle.y += particle.speedY
+
+        // Bounce off edges
+        if (particle.x > canvas.width || particle.x < 0) {
+          particle.speedX *= -1
+        }
+        if (particle.y > canvas.height || particle.y < 0) {
+          particle.speedY *= -1
+        }
+
+        // Draw particle
+        ctx.beginPath()
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(100, 255, 218, ${particle.opacity * (0.5 + Math.sin(time * 2) * 0.5)})`
+        ctx.fill()
+      })
+
+      // Draw pulsing center
+      const pulseSize = 20 + Math.sin(time * 3) * 10
+      const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, pulseSize)
+      gradient.addColorStop(0, "rgba(255, 255, 255, 0.8)")
+      gradient.addColorStop(0.5, "rgba(100, 255, 218, 0.4)")
+      gradient.addColorStop(1, "rgba(100, 255, 218, 0)")
+
+      ctx.beginPath()
+      ctx.arc(centerX, centerY, pulseSize, 0, Math.PI * 2)
+      ctx.fillStyle = gradient
+      ctx.fill()
+
+      // Draw random sparkles
+      for (let i = 0; i < 3; i++) {
+        const sparkleX = centerX + Math.cos(time * 3 + (i * Math.PI * 2) / 3) * (40 + Math.sin(time * 2) * 10)
+        const sparkleY = centerY + Math.sin(time * 3 + (i * Math.PI * 2) / 3) * (40 + Math.sin(time * 2) * 10)
+        const sparkleSize = 2 + Math.sin(time * 5 + i) * 1
+
+        ctx.beginPath()
+        ctx.arc(sparkleX, sparkleY, sparkleSize, 0, Math.PI * 2)
+        ctx.fillStyle = "rgba(255, 255, 255, 0.8)"
+        ctx.fill()
+      }
 
       animationFrameId = window.requestAnimationFrame(render)
     }
@@ -559,7 +673,7 @@ function FractalAnimation() {
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="w-full h-full" />
+  return <canvas ref={canvasRef} className="w-full h-full rounded-lg" />
 }
 
 // Optimized Typewriter Component
@@ -604,9 +718,13 @@ function SequentialTypewriter() {
   const coloredText = displayText.replace("julian", '<span class="text-[#64ffda]">julian</span>')
 
   return (
-    <span className="relative">
+    <span className="relative inline-block">
       <span dangerouslySetInnerHTML={{ __html: coloredText }} />
-      <span className={`absolute ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity duration-100`}>|</span>
+      <span
+        className={`absolute -right-[10px] ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity duration-100`}
+      >
+        |
+      </span>
     </span>
   )
 }
