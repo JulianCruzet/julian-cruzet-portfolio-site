@@ -336,7 +336,7 @@ function App() {
                 <img
                   src="images/tester1.jpg"
                   alt="Julian Cruzet"
-                  className="rounded-lg grayscale hover:grayscale-0 transition-all duration-300 w-full h-full object-cover"
+                  className="rounded-xl grayscale hover:grayscale-0 transition-all duration-300 w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
@@ -412,7 +412,7 @@ function App() {
             <div className="h-[1px] bg-gray-700 flex-grow ml-4"></div>
           </h2>
 
-          <div className="relative rounded-lg overflow-hidden bg-gray-800/50 mb-12 h-[600px]" ref={carouselRef}>
+          <div className="relative rounded-xl overflow-hidden bg-gray-800/50 mb-12 h-[600px]" ref={carouselRef}>
             <div className="relative h-full overflow-hidden">
               {featuredProjects.map((project, index) => (
                 <div
@@ -431,9 +431,9 @@ function App() {
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <img
-                    src={project.image || "/placeholder.svg"}
+                    src={project.image}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover opacity-20"
+                    className="absolute rounded-xl inset-0 w-full h-full object-cover opacity-20"
                     loading="lazy"
                   />
 
