@@ -327,11 +327,12 @@ function App() {
               <p>
                 Outside of work and studies, I'm involved with Google Developer Groups on campus as a Marketing Lead,
                 where I create engaging content to increase campus presence and event turnout. I also enjoy playing
-                basketball, fashion, and working out in my free time.
+                basketball, fashion, and working out in my free time. I'm always happy to make new friends, so feel
+                free to reach out to me!
               </p>
             </div>
 
-            <div className="relative group max-w-[350px] self-start mx-auto md:mx-0">
+            <div className="relative group max-w-[375px] self-start mx-auto md:mx-0">
               <div className="relative z-10 rounded-lg overflow-hidden aspect-square">
                 <img
                   src="images/tester1.jpg"
@@ -538,7 +539,7 @@ function AbstractAnimation() {
   useEffect(() => {
     const canvas = canvasRef.current
     const ctx = canvas.getContext("2d")
-    let animationFrameId
+    let animationFrameId: number
     let time = 0
 
     // Set canvas dimensions
@@ -683,9 +684,9 @@ function SequentialTypewriter() {
   const [isComplete, setIsComplete] = useState(false)
 
   useEffect(() => {
-    const fullText = "hi, julian here."
+    const fullText = "hi, julian here. "
     let currentIndex = 0
-    let timer
+    let timer: string | number | NodeJS.Timeout | undefined
 
     const typeNextChar = () => {
       if (currentIndex < fullText.length) {
@@ -721,7 +722,7 @@ function SequentialTypewriter() {
     <span className="relative inline-block">
       <span dangerouslySetInnerHTML={{ __html: coloredText }} />
       <span
-        className={`absolute -right-[10px] ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity duration-100`}
+        className={`absolute -right-[20px] ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity duration-100`}
       >
         |
       </span>
