@@ -29,6 +29,23 @@ body {
   animation: slideInFromBottom 0.5s ease-out forwards;
 }
 
+/* Add a new animation for the experience section */
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.4s ease-out forwards;
+}
+
 /* Preload animation classes for better performance */
 .transform {
   will-change: transform;
@@ -46,6 +63,7 @@ body {
 
 .transition-transform {
   transition-property: transform;
-  transition-duration: 200ms;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  will-change: transform;
 }
-

@@ -301,7 +301,7 @@ function App() {
               </p>
             </div>
 
-            <div className="relative group max-w-[280px] self-start">
+            <div className="relative group max-w-[350px] self-start mx-auto md:mx-0">
               <div className="relative z-10 rounded-lg overflow-hidden aspect-square">
                 <img
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -342,7 +342,6 @@ function App() {
             </div>
 
             <div className="relative overflow-hidden">
-              {/* Experience content with animation */}
               <div className="pl-8">
                 <h3 className="text-xl font-bold text-white mb-1">
                   {experiences[activeExperience].title.includes("@") ? (
@@ -356,20 +355,17 @@ function App() {
                 </h3>
                 <p className="text-gray-400 mb-4">{experiences[activeExperience].period}</p>
 
-                {/* Completely replace the content when changing experiences */}
-                {experiences.map(
-                  (exp, index) =>
-                    activeExperience === index && (
-                      <ul key={`exp-${index}-${experienceKey}`} className="space-y-4 slide-in">
-                        {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="flex">
-                            <span className="text-[#64ffda] mr-2 mt-1">▹</span>
-                            <span className="text-gray-400">{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ),
-                )}
+                {/* Use CSS transition for smoother animation */}
+                <div key={`exp-content-${experienceKey}`} className="animate-slide-in">
+                  <ul className="space-y-4">
+                    {experiences[activeExperience].achievements.map((achievement, i) => (
+                      <li key={i} className="flex">
+                        <span className="text-[#64ffda] mr-2 mt-1">▹</span>
+                        <span className="text-gray-400">{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -384,20 +380,23 @@ function App() {
             <div className="h-[1px] bg-gray-700 flex-grow ml-4"></div>
           </h2>
 
-          <div className="relative rounded-lg overflow-hidden bg-gray-800/50 mb-12" ref={carouselRef}>
-            <div className="relative h-[600px] overflow-hidden">
+          <div className="relative rounded-lg overflow-hidden bg-gray-800/50 mb-12 h-[600px]" ref={carouselRef}>
+            <div className="relative h-full overflow-hidden">
               {featuredProjects.map((project, index) => (
                 <div
                   key={index}
-                  className={`absolute inset-0 transition-transform duration-700 ease-in-out ${
+                  className={`absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out ${
                     index === currentSlide
-                      ? "transform translate-x-0 z-10"
+                      ? "translate-x-0 z-10"
                       : index === prevSlideIndex
                         ? slideDirection === "left"
-                          ? "transform -translate-x-full"
-                          : "transform translate-x-full"
-                        : "transform translate-x-full"
+                          ? "-translate-x-full"
+                          : "translate-x-full"
+                        : index > currentSlide
+                          ? "translate-x-full"
+                          : "-translate-x-full"
                   }`}
+                  style={{ backfaceVisibility: "hidden" }}
                 >
                   <img
                     src={project.image || "/placeholder.svg"}
@@ -406,27 +405,25 @@ function App() {
                     loading="lazy"
                   />
 
-                  {index === currentSlide && (
-                    <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 text-center">
-                      <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">{project.title}</h3>
-                      <div className="max-w-xl mx-auto">
-                        <p className="text-xl text-gray-300 mb-6">{project.description}</p>
-                        <div className="text-[#64ffda] mb-8 flex flex-wrap gap-4 justify-center">
-                          {project.tech.map((tech, techIndex) => (
-                            <span key={techIndex}>{tech}</span>
-                          ))}
-                        </div>
-                        <div className="flex space-x-4 justify-center">
-                          <a href={project.github} className="text-gray-300 hover:text-[#64ffda]">
-                            <Github size={24} />
-                          </a>
-                          <a href={project.demo} className="text-gray-300 hover:text-[#64ffda]">
-                            <ExternalLink size={24} />
-                          </a>
-                        </div>
+                  <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 text-center">
+                    <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">{project.title}</h3>
+                    <div className="max-w-xl mx-auto">
+                      <p className="text-xl text-gray-300 mb-6">{project.description}</p>
+                      <div className="text-[#64ffda] mb-8 flex flex-wrap gap-4 justify-center">
+                        {project.tech.map((tech, techIndex) => (
+                          <span key={techIndex}>{tech}</span>
+                        ))}
+                      </div>
+                      <div className="flex space-x-4 justify-center">
+                        <a href={project.github} className="text-gray-300 hover:text-[#64ffda]">
+                          <Github size={24} />
+                        </a>
+                        <a href={project.demo} className="text-gray-300 hover:text-[#64ffda]">
+                          <ExternalLink size={24} />
+                        </a>
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               ))}
 
@@ -607,12 +604,11 @@ function SequentialTypewriter() {
   const coloredText = displayText.replace("julian", '<span class="text-[#64ffda]">julian</span>')
 
   return (
-    <span>
+    <span className="relative">
       <span dangerouslySetInnerHTML={{ __html: coloredText }} />
-      {showCursor && <span className="text-[#64ffda]">|</span>}
+      <span className={`absolute ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity duration-100`}>|</span>
     </span>
   )
 }
 
 export default App
-
