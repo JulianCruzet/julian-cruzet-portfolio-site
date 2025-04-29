@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback, memo } from "react"
-import { Github, Linkedin, Mail, Pen, ExternalLink, ChevronLeft, ChevronRight, Folder } from "lucide-react"
+import { Github, Linkedin, Mail, Pen, ExternalLink, ChevronLeft, ChevronRight, Folder, ChevronDown } from "lucide-react"
 
 // Memoize components that don't need frequent re-renders
 const MemoizedAbstractAnimation = memo(AbstractAnimation)
@@ -48,14 +48,14 @@ function App() {
       demo: "https://github.com/JulianCruzet/CompPhotoAssignment1",
     },
     {
-      title: "Academic Oasis Platform",
+      title: "JetLagLess Calculator",
       description:
-        "A responsive React-based campus engagement platform, featuring dynamic club and job listings, with intuitive filtering and interactive user interest tracking.",
+        "A web application that helps travelers plan their sleep schedules to minimize jet lag when traveling between different time zones. Features a modern, Discord-inspired dark theme UI with a 5-step process for creating personalized jet lag adjustment schedules.",
       image:
-        "images/academicoasistemplate.png",
-      tech: ["REACT", "NODE.JS", "AGILE"],
-      github: "#",
-      demo: "#",
+        "images/jetlagless.png",
+      tech: ["NEXT.JS", "REACT", "UI/UX DESIGN"],
+      github: "https://github.com/JulianCruzet/JetLagLess",
+      demo: "https://jet-lag-less.vercel.app",
     },
     {
       title: "SpeedTyper",
@@ -105,11 +105,12 @@ function App() {
       demo: "https://github.com/JulianCruzet/CompPhotoAssignment1",
     },
     {
-      title: "Academic Oasis Platform",
+      title: "JetLagLess Calculator",
       description:
-        "A campus engagement platform with dynamic club and job listings, intuitive filtering and interactive user interest tracking.",
-      tech: ["React", "Node.js", "Responsive Design"],
-      github: "#",
+        "A web application that helps travelers plan their sleep schedules to minimize jet lag when traveling between different time zones. Features a modern, Discord-inspired dark theme UI with a 5-step process for creating personalized jet lag adjustment schedules.",
+      tech: ["Next.js", "React", "UI/UX Design"],
+      github: "https://github.com/JulianCruzet/JetLagLess",
+      demo: "https://jet-lag-less.vercel.app",
     },
     {
       title: "Spooterfy",
@@ -134,9 +135,9 @@ function App() {
       title: "AI Automation Engineer Intern @ NuNet",
       period: "APR 2025 - CURRENT",
       achievements: [
-        "Engineering full-stack automation solutions using Python, designing and implementing both front-end interfaces and back-end logic to improve workflow efficiency.",
-        "Integrating AI-driven systems to identify and automate repetitive tasks, enhancing accuracy and reducing manual operations across internal and client use cases.",
-        "Collaborating in a 4-person agile team, contributing to system architecture decisions, creating mockups in Figma, and delivering scalable features in production environments.",
+        "Architecting and building a full stack real-estate platform for a client, consolidating disparate property tools into a cohesive web application with streamlined UX and centralized data management.",
+        "Engineering scalable microservices in Go, containerizing components with Docker, and deploying to AWS with CI/CD pipelines for efficient delivery and uptime while also doing QA testing.",
+        "Driving the software development life cycle end-to-end, from requirement gathering and wireframing in Figma to implementation, testing and production deployment, all following agile methodologies.",
       ],
     },
     {
@@ -170,7 +171,7 @@ function App() {
 
   // Use useCallback to memoize functions
   const handleExperienceChange = useCallback(
-    (index) => {
+    (index: number) => {
       if (index === activeExperience) return
       setActiveExperience(index)
       setExperienceKey((prev) => prev + 1)
@@ -205,28 +206,28 @@ function App() {
   return (
     <div className="bg-[#0a192f] text-gray-300 min-h-screen">
       {/* Navigation */}
-      <nav className="fixed w-full bg-[#0a192f] z-50 px-8 py-4">
+      <nav className="fixed w-full bg-[#0a192f] z-50 px-4 sm:px-8 py-4">
         <div className="max-w-6xl mx-auto flex items-center">
-          <a href="#intro" className="text-xl font-medium text-white mr-12">
+          <a href="#intro" className="text-lg sm:text-xl font-medium text-white mr-4 sm:mr-12">
             Julian Cruzet
           </a>
-          <div className="flex space-x-8 mr-auto">
-            <a href="#intro" className="text-gray-300 hover:text-[#64ffda] transition-colors">
+          <div className="flex space-x-4 sm:space-x-8 mr-auto">
+            <a href="#intro" className="text-sm sm:text-base text-gray-300 hover:text-[#64ffda] transition-colors font-medium">
               Home
             </a>
-            <a href="#about" className="text-gray-300 hover:text-[#64ffda] transition-colors">
+            <a href="#about" className="text-sm sm:text-base text-gray-300 hover:text-[#64ffda] transition-colors font-medium">
               About
             </a>
-            <a href="#experience" className="text-gray-300 hover:text-[#64ffda] transition-colors">
+            <a href="#experience" className="text-sm sm:text-base text-gray-300 hover:text-[#64ffda] transition-colors font-medium">
               Experience
             </a>
-            <a href="#pet-projects" className="text-gray-300 hover:text-[#64ffda] transition-colors">
+            <a href="#pet-projects" className="text-sm sm:text-base text-gray-300 hover:text-[#64ffda] transition-colors font-medium">
               Projects
             </a>
           </div>
-          <div className="flex space-x-5">
+          <div className="flex space-x-3 sm:space-x-5">
             <a href="mailto:JulianCruzet@gmail.com" className="text-gray-300 hover:text-[#64ffda] transition-colors">
-              <Mail size={20} />
+              <Mail size={18} />
             </a>
             <a
               href="https://github.com/JulianCruzet"
@@ -234,7 +235,7 @@ function App() {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-[#64ffda] transition-colors"
             >
-              <Github size={20} />
+              <Github size={18} />
             </a>
             <a
               href="https://linkedin.com/in/JulianCruzet"
@@ -242,7 +243,7 @@ function App() {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-[#64ffda] transition-colors"
             >
-              <Linkedin size={20} />
+              <Linkedin size={18} />
             </a>
             <a
               href="https://JulianCruzet.ca"
@@ -250,118 +251,124 @@ function App() {
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-[#64ffda] transition-colors"
             >
-              <Pen size={20} />
+              <Pen size={18} />
             </a>
           </div>
         </div>
       </nav>
 
       {/* Intro Section */}
-      <section id="intro" className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+      <section id="intro" className="min-h-screen flex flex-col items-center justify-center px-4 text-center relative">
         <div className="max-w-3xl mx-auto">
           {/* Abstract Animation - Memoized */}
-          <div className="mb-8 w-40 h-40 mx-auto">
+          <div className="mb-2 w-60 h-60 sm:w-80 sm:h-80 mx-auto">
             <MemoizedAbstractAnimation />
           </div>
 
-          <h1 className="text-6xl font-bold mb-2">
+          <h1 className="text-4xl sm:text-6xl font-bold mb-2 tracking-tight">
             <MemoizedTypewriter />
           </h1>
-          <h2 className="text-4xl text-gray-400 mb-8">I create stuff sometimes.</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <h2 className="text-2xl sm:text-4xl text-gray-400 mb-6 sm:mb-8 font-medium tracking-tight">I create stuff sometimes.</h2>
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-normal">
             I'm a computer science student at Ontario Tech University with a focus on Machine Learning and Software
             Engineering. I'm passionate about building innovative solutions and have experience in full-stack
             development, AI automation, and data analysis.
           </p>
           <a
             href="mailto:JulianCruzet@gmail.com"
-            className="inline-flex items-center border border-[#64ffda] text-[#64ffda] px-6 py-3 rounded hover:bg-[#64ffda]/10 transition-colors"
+            className="inline-flex items-center border border-[#64ffda] text-[#64ffda] px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-[#64ffda]/10 transition-colors font-medium"
           >
             <Mail className="mr-2" size={18} />
             Say hi!
           </a>
         </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <a href="#about" className="text-[#64ffda] hover:text-white transition-colors">
+            <ChevronDown size={24} />
+          </a>
+        </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-8">
+      <section id="about" className="py-12 sm:py-20 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 flex items-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12 flex items-center tracking-tight">
             <span className="text-[#64ffda] mr-2">/</span> about me
             <div className="h-[1px] bg-gray-700 flex-grow ml-4"></div>
           </h2>
 
-          <div className="grid md:grid-cols-[3fr_2fr] gap-12 items-start">
+          <div className="grid md:grid-cols-[3fr_2fr] gap-8 sm:gap-12 items-start">
             <div className="text-gray-400">
-              <p className="mb-4">
-                I am currently a <span className="text-white">Computer Science student</span> at{" "}
-                <span className="text-[#64ffda]">Ontario Tech University</span>, with concentrations in Machine Learning
+              <p className="mb-3 font-normal text-base sm:text-lg">
+                I am currently a <span className="text-white font-medium">Computer Science student</span> at{" "}
+                <span className="text-[#64ffda] font-medium">Ontario Tech University</span>, with concentrations in Machine Learning
                 and Software Engineering. I'm also working as an{" "}
-                <span className="text-white">AI Automation Engineer Intern</span> at{" "}
-                <span className="text-[#64ffda]">NuNet</span> where I develop full-stack automation solutions.
+                <span className="text-white font-medium">AI Automation Engineer Intern</span> at{" "}
+                <span className="text-[#64ffda] font-medium">NuNet</span> where I develop full-stack automation solutions.
               </p>
 
-              <p className="mb-6">Here are some technologies I have been working with:</p>
+              <p className="mb-3 sm:mb-4 font-medium text-base sm:text-lg">Here are some technologies I have been working with:</p>
 
-              <div className="grid grid-cols-2 gap-2 mb-8">
-                <div className="flex items-center">
+              <div className="grid grid-cols-2 gap-2 mb-4 sm:mb-6">
+                <div className="flex items-center font-medium text-sm sm:text-base">
                   <span className="text-[#64ffda] mr-2">▹</span> Python
                 </div>
-                <div className="flex items-center">
-                  <span className="text-[#64ffda] mr-2">▹</span> JavaScript
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#64ffda] mr-2">▹</span> React.js
-                </div>
-                <div className="flex items-center">
+                <div className="flex items-center font-medium text-sm sm:text-base">
                   <span className="text-[#64ffda] mr-2">▹</span> Next.js
                 </div>
-                <div className="flex items-center">
-                  <span className="text-[#64ffda] mr-2">▹</span> Node.js
+                <div className="flex items-center font-medium text-sm sm:text-base">
+                  <span className="text-[#64ffda] mr-2">▹</span> JavaScript
                 </div>
-                <div className="flex items-center">
-                  <span className="text-[#64ffda] mr-2">▹</span> Java
+                <div className="flex items-center font-medium text-sm sm:text-base">
+                  <span className="text-[#64ffda] mr-2">▹</span> Springboot
+                </div>
+                <div className="flex items-center font-medium text-sm sm:text-base">
+                  <span className="text-[#64ffda] mr-2">▹</span> GoLang
+                </div>
+                <div className="flex items-center font-medium text-sm sm:text-base">
+                  <span className="text-[#64ffda] mr-2">▹</span> Docker
                 </div>
               </div>
 
-              <p>
+              <p className="font-normal text-base sm:text-lg">
                 Outside of work and studies, I'm involved with Google Developer Groups on campus as a Marketing Lead,
                 where I create engaging content to increase campus presence and event turnout. I also enjoy playing
-                basketball, fashion, and working out in my free time. I'm always happy to make new friends, so feel
-                free to reach out to me!
+                basketball, fashion, and working out in my free time.
               </p>
             </div>
 
-            <div className="relative group max-w-[375px] self-start mx-auto md:mx-0">
+            <div className="relative group max-w-[320px] sm:max-w-[400px] self-start mx-auto md:mx-0">
               <div className="relative z-10 rounded-lg overflow-hidden aspect-square">
                 <img
                   src="images/tester1.jpg"
                   alt="Julian Cruzet"
-                  className="rounded-xl grayscale hover:grayscale-0 transition-all duration-300 w-full h-full object-cover"
+                  className="rounded-lg grayscale hover:grayscale-0 transition-all duration-300 w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute inset-0 border-2 border-[#64ffda] rounded-lg transform translate-x-5 translate-y-5 -z-10 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform"></div>
+              <div className="absolute inset-0 border-2 border-[#64ffda] rounded-lg -z-10"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-8">
+      <section id="experience" className="py-12 sm:py-20 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 flex items-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12 flex items-center tracking-tight">
             <span className="text-[#64ffda] mr-2">/</span> experience
             <div className="h-[1px] bg-gray-700 flex-grow ml-4"></div>
           </h2>
 
-          <div className="grid md:grid-cols-[200px_1fr] gap-8">
-            <div className="space-y-6">
+          <div className="grid md:grid-cols-[200px_1fr] gap-4 sm:gap-8">
+            <div className="flex md:flex-col space-x-4 md:space-x-0 md:space-y-6 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0">
               {experiences.map((exp, index) => (
                 <button
                   key={index}
                   onClick={() => handleExperienceChange(index)}
-                  className={`text-left w-full py-2 px-4 border-r-2 transition-colors ${
+                  className={`text-left whitespace-nowrap md:whitespace-normal w-full py-2 px-4 border-b-2 md:border-b-0 md:border-r-2 transition-colors ${
                     activeExperience === index
                       ? "border-[#64ffda] text-[#64ffda]"
                       : "border-gray-700 text-gray-400 hover:text-[#64ffda] hover:border-[#64ffda]"
@@ -373,8 +380,8 @@ function App() {
             </div>
 
             <div className="relative overflow-hidden">
-              <div className="pl-8">
-                <h3 className="text-xl font-bold text-white mb-1">
+              <div className="pl-0 md:pl-8">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
                   {experiences[activeExperience].title.includes("@") ? (
                     <>
                       {experiences[activeExperience].title.split("@")[0]} @{" "}
@@ -384,14 +391,14 @@ function App() {
                     experiences[activeExperience].title
                   )}
                 </h3>
-                <p className="text-gray-400 mb-4">{experiences[activeExperience].period}</p>
+                <p className="text-gray-400 mb-4 text-sm sm:text-base">{experiences[activeExperience].period}</p>
 
                 {/* Fixed height container for experience content */}
-                <div className="min-h-[250px]">
+                <div className="min-h-[200px] sm:min-h-[250px]">
                   <div key={`exp-content-${experienceKey}`} className="animate-slide-in">
-                    <ul className="space-y-4">
+                    <ul className="space-y-3 sm:space-y-4">
                       {experiences[activeExperience].achievements.map((achievement, i) => (
-                        <li key={i} className="flex">
+                        <li key={i} className="flex text-sm sm:text-base">
                           <span className="text-[#64ffda] mr-2 mt-1">▹</span>
                           <span className="text-gray-400">{achievement}</span>
                         </li>
@@ -405,15 +412,15 @@ function App() {
         </div>
       </section>
 
-      {/* Pet Projects Section */}
-      <section id="pet-projects" className="py-20 px-8">
+      {/* Projects Section */}
+      <section id="pet-projects" className="py-12 sm:py-20 px-4 sm:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-12 flex items-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 sm:mb-12 flex items-center tracking-tight">
             <span className="text-[#64ffda] mr-2">/</span> projects
             <div className="h-[1px] bg-gray-700 flex-grow ml-4"></div>
           </h2>
 
-          <div className="relative rounded-xl overflow-hidden bg-gray-800/50 mb-12 h-[600px]" ref={carouselRef}>
+          <div className="relative rounded-lg overflow-hidden bg-gray-800/50 mb-8 sm:mb-12 h-[400px] sm:h-[600px]" ref={carouselRef}>
             <div className="relative h-full overflow-hidden">
               {featuredProjects.map((project, index) => (
                 <div
@@ -422,37 +429,37 @@ function App() {
                     index === currentSlide
                       ? "translate-x-0 z-10"
                       : index === prevSlideIndex
-                        ? slideDirection === "left"
-                          ? "-translate-x-full"
-                          : "translate-x-full"
-                        : index > currentSlide
-                          ? "translate-x-full"
-                          : "-translate-x-full"
+                      ? slideDirection === "left"
+                        ? "-translate-x-full"
+                        : "translate-x-full"
+                      : index > currentSlide
+                      ? "translate-x-full"
+                      : "-translate-x-full"
                   }`}
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <img
-                    src={project.image}
+                    src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="absolute rounded-xl inset-0 w-full h-full object-cover opacity-20"
+                    className="absolute inset-0 w-full h-full object-cover opacity-20"
                     loading="lazy"
                   />
 
-                  <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 text-center">
-                    <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">{project.title}</h3>
+                  <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-8 md:p-12 text-center">
+                    <h3 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-4">{project.title}</h3>
                     <div className="max-w-xl mx-auto">
-                      <p className="text-xl text-gray-300 mb-6">{project.description}</p>
-                      <div className="text-[#64ffda] mb-8 flex flex-wrap gap-4 justify-center">
+                      <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-6">{project.description}</p>
+                      <div className="text-[#64ffda] mb-6 sm:mb-8 flex flex-wrap gap-2 sm:gap-4 justify-center text-sm sm:text-base">
                         {project.tech.map((tech, techIndex) => (
                           <span key={techIndex}>{tech}</span>
                         ))}
                       </div>
                       <div className="flex space-x-4 justify-center">
                         <a href={project.github} className="text-gray-300 hover:text-[#64ffda]">
-                          <Github size={24} />
+                          <Github size={20} />
                         </a>
                         <a href={project.demo} className="text-gray-300 hover:text-[#64ffda]">
-                          <ExternalLink size={24} />
+                          <ExternalLink size={20} />
                         </a>
                       </div>
                     </div>
@@ -462,23 +469,23 @@ function App() {
 
               <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-[#0a192f]/80 p-3 rounded-full hover:bg-[#0a192f] transition-colors z-20"
+                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-[#0a192f]/80 p-2 sm:p-3 rounded-full hover:bg-[#0a192f] transition-colors z-20"
                 aria-label="Previous slide"
               >
-                <ChevronLeft className="text-[#64ffda]" size={24} />
+                <ChevronLeft className="text-[#64ffda]" size={20} />
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#0a192f]/80 p-3 rounded-full hover:bg-[#0a192f] transition-colors z-20"
+                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-[#0a192f]/80 p-2 sm:p-3 rounded-full hover:bg-[#0a192f] transition-colors z-20"
                 aria-label="Next slide"
               >
-                <ChevronRight className="text-[#64ffda]" size={24} />
+                <ChevronRight className="text-[#64ffda]" size={20} />
               </button>
             </div>
           </div>
 
           {/* Add more space between carousel and indicators */}
-          <div className="flex justify-center space-x-3 mt-8 mb-16">
+          <div className="flex justify-center space-x-2 sm:space-x-3 mt-6 sm:mt-8 mb-12 sm:mb-16">
             {featuredProjects.map((_, index) => (
               <button
                 key={index}
@@ -487,7 +494,7 @@ function App() {
                   setSlideDirection(index > currentSlide ? "left" : "right")
                   setCurrentSlide(index)
                 }}
-                className={`w-6 h-1.5 rounded-sm transition-colors ${
+                className={`w-4 sm:w-6 h-1 sm:h-1.5 rounded-sm transition-colors ${
                   currentSlide === index ? "bg-[#64ffda]" : "bg-gray-600 hover:bg-gray-500"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
@@ -495,30 +502,30 @@ function App() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-12 sm:mt-16">
             {githubProjects.map((project, index) => (
               <div
                 key={index}
-                className="bg-[#112240] rounded-lg p-8 hover:-translate-y-2 transition-transform duration-300"
+                className="bg-[#112240] rounded-lg p-6 sm:p-8 hover:-translate-y-2 transition-transform duration-300"
               >
-                <div className="flex justify-between items-start mb-6">
-                  <Folder className="text-[#64ffda]" size={40} />
-                  <div className="flex space-x-4">
+                <div className="flex justify-between items-start mb-4 sm:mb-6">
+                  <Folder className="text-[#64ffda]" size={32} />
+                  <div className="flex space-x-3 sm:space-x-4">
                     {project.github && (
                       <a href={project.github} className="text-gray-400 hover:text-[#64ffda]">
-                        <Github size={20} />
+                        <Github size={18} />
                       </a>
                     )}
                     {project.demo && (
                       <a href={project.demo} className="text-gray-400 hover:text-[#64ffda]">
-                        <ExternalLink size={20} />
+                        <ExternalLink size={18} />
                       </a>
                     )}
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-4">{project.title}</h3>
-                <p className="text-gray-400 mb-6">{project.description}</p>
-                <div className="flex flex-wrap gap-3 text-gray-500 text-sm">
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 sm:mb-4">{project.title}</h3>
+                <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">{project.description}</p>
+                <div className="flex flex-wrap gap-2 sm:gap-3 text-gray-500 text-xs sm:text-sm">
                   {project.tech.map((tech, techIndex) => (
                     <span key={techIndex}>{tech}</span>
                   ))}
@@ -532,13 +539,17 @@ function App() {
   )
 }
 
-// Fun abstract animation with just the greenish color and white
+// Flowing wave animation with organic movement
 function AbstractAnimation() {
-  const canvasRef = useRef(null)
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
     const canvas = canvasRef.current
+    if (!canvas) return
+    
     const ctx = canvas.getContext("2d")
+    if (!ctx) return
+    
     let animationFrameId: number
     let time = 0
 
@@ -546,123 +557,64 @@ function AbstractAnimation() {
     canvas.width = 200
     canvas.height = 200
 
-    // Particle system
-    const particles = []
-    const particleCount = 50
-
-    // Create particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 4 + 1,
-        speedX: (Math.random() - 0.5) * 1,
-        speedY: (Math.random() - 0.5) * 1,
-        opacity: Math.random() * 0.5 + 0.3,
-      })
-    }
-
-    // Animation loop
     const render = () => {
       time += 0.01
       ctx.fillStyle = "#0a192f"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      // Draw a cool pattern with the greenish color
       const centerX = canvas.width / 2
       const centerY = canvas.height / 2
 
-      // Draw flowing waves
-      for (let i = 0; i < 5; i++) {
+      // Draw multiple flowing curves
+      for (let i = 0; i < 3; i++) {
         ctx.beginPath()
-
-        const radius = 30 + i * 10
-        const waveAmplitude = 15 * Math.sin(time * 0.5)
-
-        for (let angle = 0; angle < Math.PI * 2; angle += 0.1) {
-          const xOffset = Math.cos(angle * 3 + time) * waveAmplitude
-          const yOffset = Math.sin(angle * 2 + time * 1.3) * waveAmplitude
-
-          const x = centerX + Math.cos(angle) * (radius + xOffset)
-          const y = centerY + Math.sin(angle) * (radius + yOffset)
+        
+        // Create wave-like paths
+        for (let angle = 0; angle <= Math.PI * 2; angle += 0.1) {
+          const radius = 40 + Math.sin(angle * 3 + time + i) * 15
+          const xOffset = Math.sin(time * 0.5 + i) * 10
+          const yOffset = Math.cos(time * 0.5 + i) * 10
+          
+          const x = centerX + Math.cos(angle) * radius + xOffset
+          const y = centerY + Math.sin(angle) * radius + yOffset
 
           if (angle === 0) {
             ctx.moveTo(x, y)
           } else {
-            ctx.lineTo(x, y)
+            ctx.quadraticCurveTo(
+              centerX + Math.cos(angle - 0.05) * (radius + 5) + xOffset,
+              centerY + Math.sin(angle - 0.05) * (radius + 5) + yOffset,
+              x, y
+            )
           }
         }
 
         ctx.closePath()
-        ctx.strokeStyle = `rgba(100, 255, 218, ${0.2 - i * 0.03})`
+        ctx.strokeStyle = `rgba(100, 255, 218, ${0.2 - i * 0.05})`
         ctx.lineWidth = 2
         ctx.stroke()
       }
 
-      // Draw connecting lines
-      ctx.globalAlpha = 0.2
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x
-          const dy = particles[i].y - particles[j].y
-          const distance = Math.sqrt(dx * dx + dy * dy)
-
-          if (distance < 50) {
-            ctx.beginPath()
-            ctx.moveTo(particles[i].x, particles[i].y)
-            ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(100, 255, 218, ${0.1 * (1 - distance / 50)})`
-            ctx.lineWidth = 0.5
-            ctx.stroke()
-          }
-        }
-      }
-      ctx.globalAlpha = 1
-
-      // Update and draw particles
-      particles.forEach((particle, index) => {
-        // Update position
-        particle.x += particle.speedX
-        particle.y += particle.speedY
-
-        // Bounce off edges
-        if (particle.x > canvas.width || particle.x < 0) {
-          particle.speedX *= -1
-        }
-        if (particle.y > canvas.height || particle.y < 0) {
-          particle.speedY *= -1
-        }
-
-        // Draw particle
-        ctx.beginPath()
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(100, 255, 218, ${particle.opacity * (0.5 + Math.sin(time * 2) * 0.5)})`
-        ctx.fill()
-      })
-
-      // Draw pulsing center
-      const pulseSize = 20 + Math.sin(time * 3) * 10
-      const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, pulseSize)
-      gradient.addColorStop(0, "rgba(255, 255, 255, 0.8)")
-      gradient.addColorStop(0.5, "rgba(100, 255, 218, 0.4)")
-      gradient.addColorStop(1, "rgba(100, 255, 218, 0)")
-
-      ctx.beginPath()
-      ctx.arc(centerX, centerY, pulseSize, 0, Math.PI * 2)
-      ctx.fillStyle = gradient
-      ctx.fill()
-
-      // Draw random sparkles
-      for (let i = 0; i < 3; i++) {
-        const sparkleX = centerX + Math.cos(time * 3 + (i * Math.PI * 2) / 3) * (40 + Math.sin(time * 2) * 10)
-        const sparkleY = centerY + Math.sin(time * 3 + (i * Math.PI * 2) / 3) * (40 + Math.sin(time * 2) * 10)
-        const sparkleSize = 2 + Math.sin(time * 5 + i) * 1
+      // Add floating particles
+      const particleCount = 8
+      for (let i = 0; i < particleCount; i++) {
+        const angle = (i / particleCount) * Math.PI * 2 + time
+        const floatRadius = 30 + Math.sin(time * 2 + i) * 20
+        const x = centerX + Math.cos(angle) * floatRadius
+        const y = centerY + Math.sin(angle) * floatRadius
 
         ctx.beginPath()
-        ctx.arc(sparkleX, sparkleY, sparkleSize, 0, Math.PI * 2)
+        ctx.arc(x, y, 2, 0, Math.PI * 2)
         ctx.fillStyle = "rgba(255, 255, 255, 0.8)"
         ctx.fill()
       }
+
+      // Add center glow
+      const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, 30)
+      gradient.addColorStop(0, "rgba(100, 255, 218, 0.2)")
+      gradient.addColorStop(1, "rgba(100, 255, 218, 0)")
+      ctx.fillStyle = gradient
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       animationFrameId = window.requestAnimationFrame(render)
     }
