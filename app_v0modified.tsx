@@ -225,7 +225,7 @@ function App() {
               Projects
             </a>
           </div>
-          <div className="flex space-x-3 sm:space-x-5">
+          <div className="hidden sm:flex space-x-3 sm:space-x-5">
             <a href="mailto:JulianCruzet@gmail.com" className="text-gray-300 hover:text-[#64ffda] transition-colors">
               <Mail size={18} />
             </a>
@@ -265,11 +265,13 @@ function App() {
             <MemoizedAbstractAnimation />
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-bold mb-2 tracking-tight">
-            <MemoizedTypewriter />
-          </h1>
-          <h2 className="text-2xl sm:text-4xl text-gray-400 mb-6 sm:mb-8 font-medium tracking-tight">I create stuff sometimes.</h2>
-          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-normal">
+          <div className="space-y-[-0.2em]">
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.1]">
+              <MemoizedTypewriter />
+            </h1>
+            <h2 className="text-2xl sm:text-4xl text-gray-400 font-medium tracking-tight leading-[1.1]">I create stuff sometimes.</h2>
+          </div>
+          <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-normal mt-4">
             I'm a computer science student at Ontario Tech University with a focus on Machine Learning and Software
             Engineering. I'm passionate about building innovative solutions and have experience in full-stack
             development, AI automation, and data analysis.
@@ -340,15 +342,15 @@ function App() {
             </div>
 
             <div className="relative group max-w-[320px] sm:max-w-[400px] self-start mx-auto md:mx-0">
-              <div className="relative z-10 rounded-lg overflow-hidden aspect-square">
+              <div className="relative z-10 rounded-2xl overflow-hidden aspect-square transform transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(100,255,218,0.2)]">
                 <img
                   src="images/tester1.jpg"
                   alt="Julian Cruzet"
-                  className="rounded-lg grayscale hover:grayscale-0 transition-all duration-300 w-full h-full object-cover"
+                  className="rounded-2xl grayscale hover:grayscale-0 transition-all duration-300 w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute inset-0 border-2 border-[#64ffda] rounded-lg -z-10"></div>
+              <div className="absolute inset-0 border-2 border-[#64ffda] rounded-2xl -z-10 transform transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
             </div>
           </div>
         </div>
