@@ -131,9 +131,19 @@ function App() {
 
   const experiences = [
     {
+      company: "ROYAL BANK OF CANADA",
+      title: "Software Developer Intern",
+      period: "SEP 2025 - CURRENT",
+      achievements: [
+        "Creating and developing multiple Salesforce solutions to be used in-house by over 6,500 employees at RBC, reducing swivel chair movements, and wasted time.",
+        "Building custom Lightning Web Components (LWC) using JavaScript, HTML, and CSS to enhance user interfaces and improve user experience within the Salesforce platform.",
+        "Collaborating with cross-functional teams to gather requirements, design solutions, and implement features that enhance business processes and improve user experience.",
+      ],
+    },
+    {
       company: "NUNET",
-      title: "AI Automation Engineer Intern @ NuNet",
-      period: "APR 2025 - CURRENT",
+      title: "AI Automation Engineer Intern",
+      period: "MAR 2025 - MAY 2025",
       achievements: [
         "Architecting and building a full stack real-estate platform for a client, consolidating disparate property tools into a cohesive web application with streamlined UX and centralized data management.",
         "Engineering scalable microservices in Go, containerizing components with Docker, and deploying to AWS with CI/CD pipelines for efficient delivery and uptime while also doing QA testing.",
@@ -152,7 +162,7 @@ function App() {
     {
       company: "GOOGLE DEVELOPER GROUPS",
       title: "Marketing Lead",
-      period: "SEP 2024 - CURRENT",
+      period: "SEP 2024 - APR 2025",
       achievements: [
         "Lead and directed a small team to film, edit and post engaging and influential social media content.",
         "Increased campus presence, general member count, and event turnout through strategic marketing initiatives.",
@@ -273,8 +283,8 @@ function App() {
           </div>
           <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-normal mt-4">
             I'm a computer science student at Ontario Tech University with a focus on Machine Learning and Software
-            Engineering. I'm passionate about building innovative solutions and have experience in full-stack
-            development, AI automation, and data analysis.
+            Engineering. I'm passionate about building real solutions to real problemsand have experience in full-stack
+            development, AI automation, and Salesforce.
           </p>
           <a
             href="mailto:JulianCruzet@gmail.com"
@@ -306,9 +316,9 @@ function App() {
               <p className="mb-3 font-normal text-base sm:text-lg">
                 I am currently a <span className="text-white font-medium">Computer Science student</span> at{" "}
                 <span className="text-[#64ffda] font-medium">Ontario Tech University</span>, with concentrations in Machine Learning
-                and Software Engineering. I'm also working as an{" "}
-                <span className="text-white font-medium">AI Automation Engineer Intern</span> at{" "}
-                <span className="text-[#64ffda] font-medium">NuNet</span> where I develop full-stack automation solutions.
+                and Software Engineering. I'm also working as a{" "}
+                <span className="text-white font-medium">Software Developer</span> at{" "}
+                <span className="text-[#64ffda] font-medium">RBC</span> where I develop Salesforce solutions.
               </p>
 
               <p className="mb-3 sm:mb-4 font-medium text-base sm:text-lg">Here are some technologies I have been working with:</p>
@@ -318,7 +328,7 @@ function App() {
                   <span className="text-[#64ffda] mr-2">▹</span> Python
                 </div>
                 <div className="flex items-center font-medium text-sm sm:text-base">
-                  <span className="text-[#64ffda] mr-2">▹</span> Next.js
+                  <span className="text-[#64ffda] mr-2">▹</span> Salesforce
                 </div>
                 <div className="flex items-center font-medium text-sm sm:text-base">
                   <span className="text-[#64ffda] mr-2">▹</span> JavaScript
@@ -335,9 +345,7 @@ function App() {
               </div>
 
               <p className="font-normal text-base sm:text-lg">
-                Outside of work and studies, I'm involved with Google Developer Groups on campus as a Marketing Lead,
-                where I create engaging content to increase campus presence and event turnout. I also enjoy playing
-                basketball, fashion, and working out in my free time.
+                Outside of work and studies, I spend my time (and money) on home decor, food, fashion, my mom and my girfriend
               </p>
             </div>
 
