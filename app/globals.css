@@ -70,3 +70,18 @@ body {
   transition-timing-function: ease-in-out;
   will-change: transform;
 }
+
+@layer base {
+  :root {
+    --aurora: repeating-linear-gradient(100deg, #080b1a 0%, #080b1a 7%, transparent 10%, transparent 12%, #080b1a 16%);
+  }
+}
+
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}

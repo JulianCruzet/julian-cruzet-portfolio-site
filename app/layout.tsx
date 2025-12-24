@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { NTR } from 'next/font/google'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const ntr = NTR({ 
@@ -20,8 +21,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={ntr.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={ntr.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
