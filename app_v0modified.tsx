@@ -1,13 +1,11 @@
 "use client"
 
-import { useState, useEffect, useCallback, memo } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Github, Linkedin, Mail, Pen, ExternalLink, ChevronLeft, ChevronRight, Folder, ChevronDown } from "lucide-react"
 import { AuroraBackground } from "@/components/ui/aurora-background"
+import { GlassDonut } from "@/components/ui/glass-donut"
 import { GlareCard } from "@/components/ui/glare-card"
 import useEmblaCarousel from "embla-carousel-react"
-
-// Memoize components that don't need frequent re-renders
-const MemoizedTypewriter = memo(SequentialTypewriter)
 
 function App() {
   const [activeExperience, setActiveExperience] = useState(0)
@@ -284,32 +282,18 @@ function App() {
       </nav>
 
       {/* Intro Section */}
-      <AuroraBackground id="intro" className="min-h-screen">
-        <div className="max-w-3xl mx-auto w-full px-4 text-center relative z-10">
-          <div className="space-y-[-0.2em] mb-4">
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.1] text-white">
-              <MemoizedTypewriter />
-            </h1>
-            <h2 className="text-2xl sm:text-4xl text-gray-200 font-medium tracking-tight leading-[1.1]">I create stuff sometimes.</h2>
-          </div>
-          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-normal mt-4">
-            I'm a computer science student at Ontario Tech University with a focus on Machine Learning and Software
-            Engineering. I'm passionate about building real solutions to real problemsand have experience in full-stack
-            development, AI automation, and Salesforce.
-          </p>
-          <a
-            href="mailto:JulianCruzet@gmail.com"
-            className="inline-flex items-center border border-[#64ffda] text-[#64ffda] px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-[#64ffda]/10 transition-colors font-medium"
-          >
-            <Mail className="mr-2" size={18} />
-            Say hi!
-          </a>
+      <AuroraBackground id="intro" className="min-h-screen overflow-hidden isolate">
+        
+        <div className="max-w-5xl mx-auto w-full px-4 text-center relative z-0 flex flex-col items-center justify-center min-h-[60vh]">
+          {/* Text is now rendered in 3D scene */}
         </div>
 
+        <GlassDonut className="absolute inset-0 z-50 pointer-events-none" />
+
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
           <a href="#about" className="text-[#64ffda] hover:text-white transition-colors">
-            <ChevronDown size={24} />
+            <ChevronDown size={32} />
           </a>
         </div>
       </AuroraBackground>
@@ -545,62 +529,5 @@ function App() {
     </div>
   )
 }
-
-function SequentialTypewriter() {
-  const [displayText, setDisplayText] = useState("")
-  const [showCursor, setShowCursor] = useState(true)
-  const [isComplete, setIsComplete] = useState(false)
-
-  useEffect(() => {
-    const fullText = "hi, julian here. "
-    let currentIndex = 0
-    let timer: string | number | NodeJS.Timeout | undefined
-
-    const typeNextChar = () => {
-      if (currentIndex < fullText.length) {
-        setDisplayText(fullText.substring(0, currentIndex + 1))
-        currentIndex++
-        // Adjust the delay as needed for specific characters
-        timer = setTimeout(typeNextChar, currentIndex === 4 ? 150 : 80)
-      } else {
-        setIsComplete(true)
-      }
-    }
-
-    // Start typing after a short delay
-    timer = setTimeout(typeNextChar, 500)
-
-    return () => clearTimeout(timer)
-  }, [])
-
-  // Blinking cursor effect - only run when typing is complete
-  useEffect(() => {
-    if (!isComplete) return
-
-    const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev)
-    }, 500)
-
-    return () => clearInterval(cursorInterval)
-  }, [isComplete])
-
-  // Pre-process the colored text once instead of on every render
-  const coloredText = displayText.replace("julian", '<span class="text-[#64ffda]">julian</span>')
-
-  return (
-    <span className="relative inline-block">
-      <span dangerouslySetInnerHTML={{ __html: coloredText }} />
-      {/* Only render the cursor if displayText is not empty */}
-      {displayText && (
-        <span
-          className={`absolute -right-[20px] ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity duration-100`}
-        >
-          |
-        </span>
-      )}
-    </span>
-  )
-}
-
 
 export default App
